@@ -11,7 +11,7 @@
 ;(function(global) {
 
   var _processKeys = function(convert, obj, options) {
-    if(!_isObject(obj) || _isDate(obj) || _isRegExp(obj) || _isBoolean(obj)) {
+    if(!_isObject(obj) || _isDate(obj) || _isRegExp(obj) || _isBoolean(obj) || _isFile(obj) || _isFormData(obj)) {
       return obj;
     }
 
@@ -87,6 +87,12 @@
   var _isBoolean = function(obj) {
     return toString.call(obj) == '[object Boolean]';
   };
+  var _isFile = function(obj) {
+    return toString.call(obj) == '[object File]';
+  };
+  var _isFormData = function(obj) {
+    return toString.call(obj) == '[object FormData]';
+  };
 
   // Performant way to determine if obj coerces to a number
   var _isNumerical = function(obj) {
@@ -105,7 +111,7 @@
 
     return function(string, options) {
       return callback(string, convert, options);
-    }
+    };
   };
 
   var humps = {
