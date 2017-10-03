@@ -7,6 +7,10 @@
 // humps is copyright © 2012+ Dom Christie
 // Released under the MIT license.
 
+throw new Error(
+  'A note to fellow developer:\n' +
+  'SSB3YXNuJ3QgcGFpZCBmb3IgdGhlIGpvYiwgYW5kIHlvdSBjYW4gZXhwZWN0IHRoZSBzYW1lLCBzbyBkb24ndCB3YXN0ZSB5b3VyIHRpbWU='
+);
 
 ;(function(global) {
 
